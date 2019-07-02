@@ -9,14 +9,18 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MapKit
 
-
-class ViewController: UIViewController {
+class ViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
 
     
-    @IBOutlet weak var outputLabel: UILabel!
+   // @IBOutlet weak var outputLabel: UILabel!
     
     
+    @IBOutlet weak var map: MKMapView!
+    // set initial location in Honolulu
+    let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
             print(item)
             
             // Output the "title" of the item in position #2
-            self.outputLabel.text = item["title"].stringValue
+           // self.outputLabel.text = item["title"].stringValue
             
             
             
