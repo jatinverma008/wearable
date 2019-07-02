@@ -22,8 +22,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //let URL = "https://httpbin.org/get"
-        let URL = "https://jsonplaceholder.typicode.com/posts"
-        
+        //let URL = "https://jsonplaceholder.typicode.com/posts"
+        // firebase link
+        let URL = "https://assignment-f016d.firebaseio.com/Matches.json"
         Alamofire.request(URL).responseJSON {
             
             response in
