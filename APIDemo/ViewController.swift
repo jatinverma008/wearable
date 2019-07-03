@@ -9,26 +9,36 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import MapKit
+import WatchConnectivity
 
-class ViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDelegate{
-
+class ViewController: UIViewController, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
     
-   // @IBOutlet weak var outputLabel: UILabel!
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
     
     
-    @IBOutlet weak var map: MKMapView!
-    // set initial location in Honolulu
-    let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-
+    
+    // MARK: Outlets
+    @IBOutlet weak var outputLabel: UILabel!
+    
+    
+    
+    // MARK: Default functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //let URL = "https://httpbin.org/get"
-        //let URL = "https://jsonplaceholder.typicode.com/posts"
-        // firebase link
         let URL = "https://assignment-f016d.firebaseio.com/Matches.json"
+        
         Alamofire.request(URL).responseJSON {
             
             response in
@@ -62,8 +72,8 @@ class ViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDel
             
             // 2c. Get the 3rd item in the array
             // item #3 = position 2
-            var item = responseArray[2];
-            print(item)
+            //var item = responseArray[2];
+            //print(item)
             
             // Output the "title" of the item in position #2
            // self.outputLabel.text = item["title"].stringValue
@@ -77,24 +87,67 @@ class ViewController: UIViewController , MKMapViewDelegate, CLLocationManagerDel
             
             
             
-//            // 2b. Get a key from the JSON object
-//            let origin = jsonResponse["origin"]
-//            let host = jsonResponse["headers"]["Host"]
-//
-//            // 2c. Output the value to screen
-//            print("Your IP Address: \(origin)")
-//            print("Host: \(host)")
-//
-//            // 3. Show the data in the user interface
-//            self.outputLabel.text = "IP Address: \(origin)"
+            //            // 2b. Get a key from the JSON object
+            //            let origin = jsonResponse["origin"]
+            //            let host = jsonResponse["headers"]["Host"]
+            //
+            //            // 2c. Output the value to screen
+            //            print("Your IP Address: \(origin)")
+            //            print("Host: \(host)")
+            //
+            //            // 3. Show the data in the user interface
+            //            self.outputLabel.text = "IP Address: \(origin)"
         }
+        
+        
+        // Does your iPhone support "talking to a watch"?
+        // If yes, then create the session
+        // If no, then output error message
+        if (WCSession.isSupported()) {
+            print("PHONE: Phone supports WatchConnectivity!")
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        else {
+            print("PHONE: Phone does not support WatchConnectivity")
+        }
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
+    // MARK: Actions
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        print("button pressed")
+        
+        // check if the watch is paired / accessible
+        if (WCSession.default.isReachable) {
+            // construct the message you want to send
+            // the message is in dictionary
+            let abc = [
+                "lastName":"albert",
+                "firstName":"danison",
+                "email":"a@gmail.com",
+                "lat":"50.0",
+                "lng":"97.0",
+                "username":"adanison",
+                "password":"0000"
+            ]
+            // send the message to the watch
+            WCSession.default.sendMessage(abc, replyHandler: nil)
+        }
+        else {
+            print("PHONE: Cannot find the watch")
+        }
+        
+    }
+    
+    
 }
 
