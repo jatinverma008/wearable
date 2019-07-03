@@ -11,6 +11,20 @@ import Alamofire
 import SwiftyJSON
 import WatchConnectivity
 
+struct jsonstruct:Decodable {
+    
+    let Date:String
+    let Id:String
+    let Latitude:String
+    let Location:String
+    let TeamA:String
+    let TeamB:String
+    let Time:String
+    let city:String
+    let longitude: String
+}
+
+
 class ViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
@@ -29,13 +43,16 @@ class ViewController: UIViewController, WCSessionDelegate {
     // MARK: Outlets
     @IBOutlet weak var outputLabel: UILabel!
     
+    var arrdata = [jsonstruct]()
     
-    
+
     // MARK: Default functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+           getdata()
+    }
+         func getdata(){
         //let URL = "https://httpbin.org/get"
         let URL = "https://assignment-f016d.firebaseio.com/Matches.json"
         
@@ -70,33 +87,10 @@ class ViewController: UIViewController, WCSessionDelegate {
             // 2b. Get the array out of the JSON object
             var responseArray = jsonResponse.arrayValue
             
-            // 2c. Get the 3rd item in the array
-            // item #3 = position 2
-            //var item = responseArray[2];
-            //print(item)
-            
-            // Output the "title" of the item in position #2
-           // self.outputLabel.text = item["title"].stringValue
             
             
             
             
-            
-            
-            
-            
-            
-            
-            //            // 2b. Get a key from the JSON object
-            //            let origin = jsonResponse["origin"]
-            //            let host = jsonResponse["headers"]["Host"]
-            //
-            //            // 2c. Output the value to screen
-            //            print("Your IP Address: \(origin)")
-            //            print("Host: \(host)")
-            //
-            //            // 3. Show the data in the user interface
-            //            self.outputLabel.text = "IP Address: \(origin)"
         }
         
         

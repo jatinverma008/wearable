@@ -22,6 +22,7 @@
 		0582B135222CF7C8008A464A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0582B133222CF7C8008A464A /* Main.storyboard */; };
 		1F12F189A34266575808861E /* Pods_APIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F1FF7CBE316F7AE208B02B /* Pods_APIDemo.framework */; };
 		3EB19F2922CC01EF001B2320 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB19F2822CC01EF001B2320 /* MapViewController.swift */; };
+		3EB19F2B22CD0967001B2320 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3EB19F2A22CD0967001B2320 /* README.md */; };
 		DA33CDBC608D164A5668A8A4 /* Pods_APIDemo_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13E593EABBE85ED535B3C03 /* Pods_APIDemo_WatchKit_Extension.framework */; };
 		EC9F5B15CA534826A1BD9BF2 /* Pods_APIDemo_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2451FB6B7F95ACBA4988802C /* Pods_APIDemo_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		2451FB6B7F95ACBA4988802C /* Pods_APIDemo_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIDemo_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F1FF7CBE316F7AE208B02B /* Pods_APIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB19F2822CC01EF001B2320 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3EB19F2A22CD0967001B2320 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5DF0AF8FF4B2EC37EBEB8311 /* Pods-APIDemo WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-APIDemo WatchKit App/Pods-APIDemo WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		6D9930A793F6379F5AB88708 /* Pods-APIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.release.xcconfig"; path = "Target Support Files/Pods-APIDemo/Pods-APIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A5FF5DC30ED4E057097849CD /* Pods-APIDemo WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-APIDemo WatchKit Extension/Pods-APIDemo WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				056B2F8F222CDAC5000F8CA5 /* Assets.xcassets */,
 				056B2F91222CDAC5000F8CA5 /* LaunchScreen.storyboard */,
 				056B2F94222CDAC5000F8CA5 /* Info.plist */,
+				3EB19F2A22CD0967001B2320 /* README.md */,
 			);
 			path = APIDemo;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			files = (
 				0582B135222CF7C8008A464A /* Main.storyboard in Resources */,
 				056B2F93222CDAC5000F8CA5 /* LaunchScreen.storyboard in Resources */,
+				3EB19F2B22CD0967001B2320 /* README.md in Resources */,
 				056B2F90222CDAC5000F8CA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
