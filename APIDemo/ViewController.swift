@@ -11,18 +11,18 @@ import Alamofire
 import SwiftyJSON
 import WatchConnectivity
 
-struct jsonstruct:Decodable {
-    
-    let Date:String
-    let Id:String
-    let Latitude:String
-    let Location:String
-    let TeamA:String
-    let TeamB:String
-    let Time:String
-    let  city:String
-    let longitude: String
-}
+//struct jsonstruct:Decodable {
+//    
+//    let Date:String
+//    let Id:String
+//    let Latitude:String
+//    let Location:String
+//    let TeamA:String
+//    let TeamB:String
+//    let Time:String
+//    let  city:String
+//    let longitude: String
+//}
 
 
 class ViewController: UIViewController, WCSessionDelegate {
