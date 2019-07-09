@@ -15,18 +15,130 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="APIDemo_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="left" text="Watch App" id="x5x-MS-41c"/>
-                        <button width="1" alignment="left" title="Get Data" id="oFp-PR-3wU">
+                        <table alignment="left" id="HOX-xg-SAx"/>
+                        <button width="1" alignment="left" title="Quater-Final" id="W3h-d6-eNp">
                             <connections>
-                                <action selector="getDataPressed" destination="AgC-eL-Hgc" id="Y7m-Nn-eSi"/>
+                                <action selector="QFButton" destination="AgC-eL-Hgc" id="RKE-av-ziN"/>
+                                <segue destination="vmW-Y0-Nmh" kind="push" id="3NO-0d-cTH"/>
                             </connections>
                         </button>
-                        <label alignment="left" text="Label" id="l12-Sb-WkN"/>
+                        <button width="1" alignment="left" title="SemiFinal" id="kbK-zE-cjZ">
+                            <connections>
+                                <segue destination="xeR-01-cu7" kind="push" id="tpP-0g-ykd"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Third-Place" id="D15-Mw-lYB">
+                            <connections>
+                                <action selector="TPButton" destination="AgC-eL-Hgc" id="TtK-3j-p7r"/>
+                                <segue destination="Bhv-c5-RBu" kind="push" id="ePM-Mp-xhn"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Final" id="oFp-PR-3wU">
+                            <connections>
+                                <action selector="getDataPressed" destination="AgC-eL-Hgc" id="aNx-G1-wg0"/>
+                                <segue destination="YlJ-SX-h1f" kind="push" id="3m5-y2-uIa"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
-                        <outlet property="watchOutputLabel" destination="l12-Sb-WkN" id="sdF-fb-v3Z"/>
+                        <outlet property="watchFinal" destination="HOX-xg-SAx" id="tFW-k3-80l"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="3" y="148"/>
+        </scene>
+        <!--Final Interface Controller-->
+        <scene sceneID="zTN-5L-Cli">
+            <objects>
+                <controller id="YlJ-SX-h1f" customClass="FinalInterfaceController" customModule="APIDemo_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Get Data" id="mbG-DX-x0D">
+                            <connections>
+                                <action selector="getDataPressed" destination="YlJ-SX-h1f" id="dCf-wh-flz"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="HkW-Tr-0m7"/>
+                        <label alignment="left" text="Label" id="cgH-5O-CZf"/>
+                        <label alignment="left" text="Label" id="1Qp-wE-UZO"/>
+                        <label alignment="left" text="Label" id="1hf-tu-2Io"/>
+                    </items>
+                    <connections>
+                        <outlet property="locationOutput" destination="1hf-tu-2Io" id="LoB-1p-hcm"/>
+                        <outlet property="teamAoutput" destination="cgH-5O-CZf" id="6sp-kK-epB"/>
+                        <outlet property="teamBOutput" destination="1Qp-wE-UZO" id="pz8-LK-gNk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="380" y="147"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qtE-1k-gpE">
+            <objects>
+                <controller id="Bhv-c5-RBu" customClass="TPInterfaceController" customModule="APIDemo_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Get Data" id="Hup-aS-3vS">
+                            <connections>
+                                <action selector="button" destination="Bhv-c5-RBu" id="Fz4-8o-C1X"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" id="OSj-Iy-o6t"/>
+                        <label alignment="left" text="Label" id="pey-Bh-rr1"/>
+                        <label alignment="left" text="Label" id="eJO-NL-d23"/>
+                    </items>
+                    <connections>
+                        <outlet property="locationOutput" destination="eJO-NL-d23" id="65w-Za-Ndw"/>
+                        <outlet property="teamAoutput" destination="OSj-Iy-o6t" id="XUu-0L-wGS"/>
+                        <outlet property="teamBOutput" destination="pey-Bh-rr1" id="3lx-Zc-31M"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-139" y="606"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="cSv-oe-GHU">
+            <objects>
+                <controller id="xeR-01-cu7" customClass="SFInterfaceController" customModule="APIDemo_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Get Data" id="tFw-9h-nEi">
+                            <connections>
+                                <action selector="button" destination="xeR-01-cu7" id="GNZ-3O-pZe"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" id="5QT-IA-l88"/>
+                        <label alignment="left" text="Label" id="h7P-cS-Etb"/>
+                        <label alignment="left" text="Label" id="XNh-1D-tYF"/>
+                    </items>
+                    <connections>
+                        <outlet property="locationOutput" destination="XNh-1D-tYF" id="ibr-tY-Krs"/>
+                        <outlet property="teamAoutput" destination="5QT-IA-l88" id="XSQ-Q9-VUA"/>
+                        <outlet property="teamBOutput" destination="h7P-cS-Etb" id="500-td-iyw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="139" y="606"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="yOn-PN-yrL">
+            <objects>
+                <controller id="vmW-Y0-Nmh" customClass="QFInterfaceController" customModule="APIDemo_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Get Data" id="L2I-iR-CM2">
+                            <connections>
+                                <action selector="button" destination="vmW-Y0-Nmh" id="cXR-mI-vOL"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Label" id="8Pz-I9-2Hs"/>
+                        <label alignment="left" text="Label" id="oFS-hS-msF"/>
+                        <label alignment="left" text="Label" id="SZ8-6U-2kz"/>
+                    </items>
+                    <connections>
+                        <outlet property="locationOutput" destination="SZ8-6U-2kz" id="twU-Vc-v0i"/>
+                        <outlet property="teamAoutput" destination="8Pz-I9-2Hs" id="HDE-Gb-u7W"/>
+                        <outlet property="teamBOutput" destination="oFS-hS-msF" id="FeH-4k-cus"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="457" y="606"/>
         </scene>
     </scenes>
 </document>
